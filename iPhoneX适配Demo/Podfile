@@ -1,0 +1,18 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, ‘8.0’
+inhibit_all_warnings! # 这个除去第三方库的警告
+target 'iPhoneX适配Demo' do
+    # Third Pay
+    pod 'AFNetworking'
+    pod 'SDWebImage'
+    pod 'MBProgressHUD'
+    pod 'Masonry'
+    pod 'MJRefresh'
+    pod 'IQKeyboardManager'
+    #pod 'MLeaksFinder'
+    pod 'DZNEmptyDataSet'
+    pod 'YYWebImage'
+    pod 'YYModel'
+    pod 'MJExtension'
+    # SDK
+end

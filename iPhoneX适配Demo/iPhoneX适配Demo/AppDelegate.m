@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  iPhoneX适配Demo
 //
-//  Created by Zengyijie' Com  on 2017/12/19.
+//  Created by Zengyijie' Com  on 2017/12/20.
 //  Copyright © 2017年 www.baibu.la. All rights reserved.
 //
 
@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window setRootViewController:[[ViewController alloc] init]];
+    [self.window setRootViewController:[[UINavigationController alloc] initWithRootViewController:[ViewController new]]];
     [self.window makeKeyAndVisible];
     return YES;
 }
