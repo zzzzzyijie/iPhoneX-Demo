@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A55A9F1FEBB0BD0041337A /* fitViewController.m */; };
 		39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3A71FEA45CB002A7520 /* AppDelegate.m */; };
 		39EAD3AE1FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3AD1FEA45CB002A7520 /* tempfile.text */; };
 		39EAD3B11FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3B01FEA45CB002A7520 /* tempfile.text */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhoneX适配Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39A55A9E1FEBB0BD0041337A /* fitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fitViewController.h; path = Classes/fitViewController.h; sourceTree = "<group>"; };
+		39A55A9F1FEBB0BD0041337A /* fitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = fitViewController.m; path = Classes/fitViewController.m; sourceTree = "<group>"; };
 		39EAD3A31FEA45CB002A7520 /* iPhoneX适配Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhoneX适配Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39EAD3A61FEA45CB002A7520 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39EAD3A71FEA45CB002A7520 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 			children = (
 				39EAD3EA1FEA462D002A7520 /* ViewController.h */,
 				39EAD3EB1FEA462D002A7520 /* ViewController.m */,
+				39A55A9E1FEBB0BD0041337A /* fitViewController.h */,
+				39A55A9F1FEBB0BD0041337A /* fitViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */,
 				39EAD3E81FEA4618002A7520 /* main.m in Sources */,
 				39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */,
 				39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */,

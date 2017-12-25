@@ -8,12 +8,18 @@
 
 #import "ViewController.h"
 #import <Masonry.h>
+#import "fitViewController.h"
+
+#define iOS11 @available(iOS 11.0, *)
 
 @interface ViewController ()
 <
 UITableViewDelegate,
 UITableViewDataSource
 >
+
+/** titleArray */
+@property (nonatomic,strong) NSArray *titleArray;
 
 @end
 
@@ -22,7 +28,7 @@ UITableViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor clearColor];
     self.navigationItem.title = @"首页";
     
     NSLog(@"viewDidLoad - self.view.info = %@",self.view);
@@ -38,14 +44,26 @@ UITableViewDataSource
      
      */
     
+    [self setupData];
+    
     // Toobar
     //[self setupToobarView];
     
     // TableView
-    //[self setupTableView];
+    [self setupTableView];
     
     // ContentView
-    [self setupContentView];
+    //[self setupContentView];
+}
+
+- (void)setupData{
+    self.titleArray = @[@"SomeView",@"ToolBar",@"ContentView",@"TableView"];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewDidLayoutSubviews{
@@ -67,73 +85,41 @@ UITableViewDataSource
 
 - (void)setupToobarView{
     
-    UIView *toolbar = [[UIView alloc] initWithFrame:CGRectZero];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
     toolbar.backgroundColor = [UIColor blueColor];
+    toolbar.barTintColor = [UIColor blueColor];
     [self.view addSubview:toolbar];
     
     toolbar.translatesAutoresizingMaskIntoConstraints = NO;
     
-    if (@available(iOS 11.0, *)) {
-        NSLayoutConstraint *bottom = [toolbar.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor];
-        NSLayoutConstraint *height = [toolbar.heightAnchor constraintEqualToConstant:48];
-        NSLayoutConstraint *left = [toolbar.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-        NSLayoutConstraint *right = [toolbar.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-        [NSLayoutConstraint activateConstraints:@[bottom, height, left, right]];
+    if (iOS11) {
+        [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(48);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        }];
     }else{
-        NSLayoutConstraint *bottom = [toolbar.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor];
-        NSLayoutConstraint *height = [toolbar.heightAnchor constraintEqualToConstant:48];
-        NSLayoutConstraint *left = [toolbar.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-        NSLayoutConstraint *right = [toolbar.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-        [NSLayoutConstraint activateConstraints:@[bottom, height, left, right]];
+        [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(48);
+            make.left.right.bottom.equalTo(self.view);
+        }];
     }
+    
 }
 
 - (void)setupTableView{
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    CGRect tableViewFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    UITableView *tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStyleGrouped];
+    //tableView.backgroundColor = [UIColor orangeColor];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.rowHeight = 70;
     [self.view addSubview:tableView];
-    if (@available(iOS 11.0, *)) {
-        NSLayoutConstraint *top = [tableView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
-        NSLayoutConstraint *bottom = [tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
-        NSLayoutConstraint *left = [tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-        NSLayoutConstraint *right = [tableView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-    } else {
-        NSLayoutConstraint *top = [tableView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor];
-        NSLayoutConstraint *bottom = [tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
-        NSLayoutConstraint *left = [tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-        NSLayoutConstraint *right = [tableView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-    }
-}
-
-- (void)setupContentView{
-    
-    UIView *contentView = [UIView new];
-    contentView.backgroundColor = [UIColor redColor];
-    //v.frame = CGRectMake(0, 64,self.view.frame.size.width,self.view.frame.size.height-64);
-    //v.frame = CGRectMake(0, 88,self.view.frame.size.width,self.view.frame.size.height-88);
-    [self.view addSubview:contentView];
-    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-        }else{
-            make.top.equalTo(self.mas_topLayoutGuideBottom);
-            make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
-            make.left.equalTo(self.view);
-            make.right.equalTo(self.view);
-        }
-    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return self.titleArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,9 +127,57 @@ UITableViewDataSource
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        //cell.backgroundColor = [UIColor orangeColor];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"cell - %ld",indexPath.row];
+    //cell.textLabel.text = [NSString stringWithFormat:@"cell - %ld",indexPath.row];
+    cell.textLabel.text = self.titleArray[indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger row = indexPath.row;
+    switch (row) {
+        case 0:{
+            fitViewController *vc = [[fitViewController alloc] init];
+            [vc addSomeView];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 1:{
+            fitViewController *vc = [[fitViewController alloc] init];
+            [vc setupToobarView];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 2:{
+            fitViewController *vc = [[fitViewController alloc] init];
+            [vc setupContentView];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 3:{
+            fitViewController *vc = [[fitViewController alloc] init];
+            [vc setupTableView];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
