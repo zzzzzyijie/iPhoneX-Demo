@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "NavViewController.h"
 #import "ViewController2.h"
+#import "ViewController3.h"
 @interface AppDelegate ()
 
 @end
@@ -28,9 +29,11 @@
     self.tabVc = tabVc;
     NavViewController *nav = [[NavViewController alloc] initWithRootViewController:[ViewController new]];
     NavViewController *nav2 = [[NavViewController alloc] initWithRootViewController:[ViewController2 new]];
+    NavViewController *nav3 = [[NavViewController alloc] initWithRootViewController:[ViewController3 new]];
     nav.title = @"TableView";
     nav2.title = @"ContentView";
-    tabVc.viewControllers = @[nav,nav2];
+    nav3.title = @"ScrollView";
+    tabVc.viewControllers = @[nav,nav3,nav2];
     [self.window setRootViewController:tabVc];
     [self.window makeKeyAndVisible];
     return YES;
