@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, ‘8.0’
+platform :ios, ‘10.0’
 inhibit_all_warnings! # 这个除去第三方库的警告
 target 'iPhoneX适配Demo' do
     # Third Pay
@@ -14,5 +14,6 @@ target 'iPhoneX适配Demo' do
     pod 'YYWebImage'
     pod 'YYModel'
     pod 'MJExtension'
+    pod 'JZScaleButton'
     # SDK
 end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <Masonry.h>
 #import "fitViewController.h"
+#import <JZScaleButton.h>
 
 #define iOS11 @available(iOS 11.0, *)
 
@@ -29,7 +30,7 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor clearColor];
-    self.navigationItem.title = @"首页";
+    self.navigationItem.title = @"TableView";
     
     NSLog(@"viewDidLoad - self.view.info = %@",self.view);
     /*
@@ -57,7 +58,7 @@ UITableViewDataSource
 }
 
 - (void)setupData{
-    self.titleArray = @[@"SomeView",@"ToolBar",@"ContentView",@"TableView"];
+    self.titleArray = @[@"scrollView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView"];
     
 }
 
@@ -85,12 +86,14 @@ UITableViewDataSource
 
 - (void)setupToobarView{
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-    toolbar.backgroundColor = [UIColor blueColor];
-    toolbar.barTintColor = [UIColor blueColor];
+    UIToolbar *toolbar = ({
+       UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
+        toolbar.translatesAutoresizingMaskIntoConstraints = NO;
+        toolbar.backgroundColor = [UIColor blueColor];
+        toolbar.barTintColor = [UIColor blueColor];
+        toolbar;
+    });
     [self.view addSubview:toolbar];
-    
-    toolbar.translatesAutoresizingMaskIntoConstraints = NO;
     
     if (iOS11) {
         [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,13 +112,33 @@ UITableViewDataSource
 }
 
 - (void)setupTableView{
-    CGRect tableViewFrame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    UITableView *tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStyleGrouped];
-    //tableView.backgroundColor = [UIColor orangeColor];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.rowHeight = 70;
-    [self.view addSubview:tableView];
+    UITableView *contentTableView = ({
+        UITableView *contentTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        [self.view addSubview:contentTableView];
+        contentTableView.showsVerticalScrollIndicator = NO;
+        contentTableView.showsHorizontalScrollIndicator = NO;
+        contentTableView.alwaysBounceVertical = YES;
+        contentTableView.backgroundColor = [UIColor orangeColor];
+        contentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        contentTableView.delegate = self;
+        contentTableView.dataSource = self;
+        contentTableView.rowHeight = 70;
+        contentTableView;
+    });
+    [contentTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        if(iOS11){
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        }else{
+            make.edges.equalTo(self.view);
+        }
+    }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -129,7 +152,6 @@ UITableViewDataSource
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         //cell.backgroundColor = [UIColor orangeColor];
     }
-    //cell.textLabel.text = [NSString stringWithFormat:@"cell - %ld",indexPath.row];
     cell.textLabel.text = self.titleArray[indexPath.row];
     return cell;
 }
@@ -139,7 +161,7 @@ UITableViewDataSource
     switch (row) {
         case 0:{
             fitViewController *vc = [[fitViewController alloc] init];
-            [vc addSomeView];
+            [vc setupScrollView];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
@@ -164,20 +186,20 @@ UITableViewDataSource
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return nil;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return nil;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0;
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

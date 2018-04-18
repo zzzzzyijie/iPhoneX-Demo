@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390C0536207CB13F00FA4F69 /* TSETFILE.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C0535207CB13F00FA4F69 /* TSETFILE.m */; };
+		392B550E2081AFC4005CB86A /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B550D2081AFC4005CB86A /* NavViewController.m */; };
+		392B551C2085A21C005CB86A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551B2085A21C005CB86A /* ViewController2.m */; };
 		39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A55A9F1FEBB0BD0041337A /* fitViewController.m */; };
 		39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3A71FEA45CB002A7520 /* AppDelegate.m */; };
 		39EAD3AE1FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3AD1FEA45CB002A7520 /* tempfile.text */; };
@@ -41,6 +44,12 @@
 
 /* Begin PBXFileReference section */
 		112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhoneX适配Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		390C0534207CB13F00FA4F69 /* TSETFILE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSETFILE.h; sourceTree = "<group>"; };
+		390C0535207CB13F00FA4F69 /* TSETFILE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSETFILE.m; sourceTree = "<group>"; };
+		392B550C2081AFC4005CB86A /* NavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		392B550D2081AFC4005CB86A /* NavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		392B551A2085A21C005CB86A /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		392B551B2085A21C005CB86A /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		39A55A9E1FEBB0BD0041337A /* fitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fitViewController.h; path = Classes/fitViewController.h; sourceTree = "<group>"; };
 		39A55A9F1FEBB0BD0041337A /* fitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = fitViewController.m; path = Classes/fitViewController.m; sourceTree = "<group>"; };
 		39EAD3A31FEA45CB002A7520 /* iPhoneX适配Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhoneX适配Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +70,7 @@
 		39EAD3E61FEA4618002A7520 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resoures/Info.plist; sourceTree = "<group>"; };
 		39EAD3EA1FEA462D002A7520 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = "<group>"; };
 		39EAD3EB1FEA462D002A7520 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = "<group>"; };
+		39F33B9D2004746E008084DB /* iPhoneX适配Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iPhoneX适配Demo.entitlements"; sourceTree = "<group>"; };
 		830AAFD86B634D4C92EB8D30 /* Pods-iPhoneX适配Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoneX适配Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoneX适配Demo/Pods-iPhoneX适配Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		8476F073C5B961894432DF25 /* Pods-iPhoneX适配Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPhoneX适配Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPhoneX适配Demo/Pods-iPhoneX适配Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +126,7 @@
 		39EAD3A51FEA45CB002A7520 /* iPhoneX适配Demo */ = {
 			isa = PBXGroup;
 			children = (
+				39F33B9D2004746E008084DB /* iPhoneX适配Demo.entitlements */,
 				39EAD3A61FEA45CB002A7520 /* AppDelegate.h */,
 				39EAD3A71FEA45CB002A7520 /* AppDelegate.m */,
 				39EAD3A91FEA45CB002A7520 /* Classes */,
@@ -132,8 +143,14 @@
 			children = (
 				39EAD3EA1FEA462D002A7520 /* ViewController.h */,
 				39EAD3EB1FEA462D002A7520 /* ViewController.m */,
+				392B551A2085A21C005CB86A /* ViewController2.h */,
+				392B551B2085A21C005CB86A /* ViewController2.m */,
 				39A55A9E1FEBB0BD0041337A /* fitViewController.h */,
 				39A55A9F1FEBB0BD0041337A /* fitViewController.m */,
+				390C0534207CB13F00FA4F69 /* TSETFILE.h */,
+				390C0535207CB13F00FA4F69 /* TSETFILE.m */,
+				392B550C2081AFC4005CB86A /* NavViewController.h */,
+				392B550D2081AFC4005CB86A /* NavViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -279,6 +296,11 @@
 					39EAD3A21FEA45CB002A7520 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					39EAD3C61FEA45CB002A7520 = {
 						CreatedOnToolsVersion = 9.1;
@@ -402,10 +424,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392B551C2085A21C005CB86A /* ViewController2.m in Sources */,
 				39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */,
 				39EAD3E81FEA4618002A7520 /* main.m in Sources */,
 				39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */,
 				39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */,
+				392B550E2081AFC4005CB86A /* NavViewController.m in Sources */,
+				390C0536207CB13F00FA4F69 /* TSETFILE.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -538,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -550,12 +575,16 @@
 			baseConfigurationReference = 830AAFD86B634D4C92EB8D30 /* Pods-iPhoneX适配Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "iPhoneX适配Demo/iPhoneX适配Demo.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WWRCUEEBS;
 				INFOPLIST_FILE = "$(SRCROOT)/iPhoneX适配Demo/Resoures/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jacky.iPhoneX--Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = jacky.iPhoneXjzy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -565,12 +594,16 @@
 			baseConfigurationReference = 8476F073C5B961894432DF25 /* Pods-iPhoneX适配Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "iPhoneX适配Demo/iPhoneX适配Demo.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WWRCUEEBS;
 				INFOPLIST_FILE = "$(SRCROOT)/iPhoneX适配Demo/Resoures/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "jacky.iPhoneX--Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = jacky.iPhoneXjzy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

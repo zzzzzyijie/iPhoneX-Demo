@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
+#import "NavViewController.h"
+#import "ViewController2.h"
 @interface AppDelegate ()
 
 @end
@@ -17,10 +18,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    if (@available(iOS 11, *)) {
+//        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window setRootViewController:[[UINavigationController alloc] initWithRootViewController:[ViewController new]]];
+    UITabBarController *tabVc = [[UITabBarController alloc] init];
+    self.tabVc = tabVc;
+    NavViewController *nav = [[NavViewController alloc] initWithRootViewController:[ViewController new]];
+    NavViewController *nav2 = [[NavViewController alloc] initWithRootViewController:[ViewController2 new]];
+    nav.title = @"TableView";
+    nav2.title = @"ContentView";
+    tabVc.viewControllers = @[nav,nav2];
+    [self.window setRootViewController:tabVc];
     [self.window makeKeyAndVisible];
     return YES;
 }
