@@ -17,11 +17,17 @@
 
 @implementation AppDelegate
 
+/**
+ 
+ To fix:
+    1. iOS11以下 （6sp 6p）， 有navigationBar和Tabbar的布局会占据整个屏幕（self.view），
+       希望不占据整个屏幕。
+    2.跳转下一个页面的时候，布局会卡顿
+ 
+ */
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    if (@available(iOS 11, *)) {
-//        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//    }
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
