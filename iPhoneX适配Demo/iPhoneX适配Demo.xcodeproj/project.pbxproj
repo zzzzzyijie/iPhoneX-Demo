@@ -11,6 +11,7 @@
 		392B550E2081AFC4005CB86A /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B550D2081AFC4005CB86A /* NavViewController.m */; };
 		392B551C2085A21C005CB86A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551B2085A21C005CB86A /* ViewController2.m */; };
 		392B551F20873396005CB86A /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551E20873396005CB86A /* ViewController3.m */; };
+		392B552220883245005CB86A /* MyToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B552120883245005CB86A /* MyToolbar.m */; };
 		39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A55A9F1FEBB0BD0041337A /* fitViewController.m */; };
 		39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3A71FEA45CB002A7520 /* AppDelegate.m */; };
 		39EAD3AE1FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3AD1FEA45CB002A7520 /* tempfile.text */; };
@@ -53,6 +54,8 @@
 		392B551B2085A21C005CB86A /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		392B551D20873396005CB86A /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController3.h; path = Classes/ViewController3.h; sourceTree = "<group>"; };
 		392B551E20873396005CB86A /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController3.m; path = Classes/ViewController3.m; sourceTree = "<group>"; };
+		392B552020883245005CB86A /* MyToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyToolbar.h; path = Classes/MyToolbar.h; sourceTree = "<group>"; };
+		392B552120883245005CB86A /* MyToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyToolbar.m; path = Classes/MyToolbar.m; sourceTree = "<group>"; };
 		39A55A9E1FEBB0BD0041337A /* fitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fitViewController.h; path = Classes/fitViewController.h; sourceTree = "<group>"; };
 		39A55A9F1FEBB0BD0041337A /* fitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = fitViewController.m; path = Classes/fitViewController.m; sourceTree = "<group>"; };
 		39EAD3A31FEA45CB002A7520 /* iPhoneX适配Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhoneX适配Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +159,8 @@
 				390C0535207CB13F00FA4F69 /* TSETFILE.m */,
 				392B550C2081AFC4005CB86A /* NavViewController.h */,
 				392B550D2081AFC4005CB86A /* NavViewController.m */,
+				392B552020883245005CB86A /* MyToolbar.h */,
+				392B552120883245005CB86A /* MyToolbar.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				39EAD3E81FEA4618002A7520 /* main.m in Sources */,
 				39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */,
 				39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */,
+				392B552220883245005CB86A /* MyToolbar.m in Sources */,
 				392B550E2081AFC4005CB86A /* NavViewController.m in Sources */,
 				392B551F20873396005CB86A /* ViewController3.m in Sources */,
 				390C0536207CB13F00FA4F69 /* TSETFILE.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "fitViewController.h"
 // View
-
+#import "MyToolbar.h"
 // Controller
 
 #import "AppDelegate.h"
@@ -130,35 +130,6 @@ UITableViewDataSource
     }];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-}
-
-- (void)setupToobarView{
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    UIToolbar *toolbar = ({
-        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-        toolbar.translatesAutoresizingMaskIntoConstraints = NO;
-        toolbar.backgroundColor = [UIColor blueColor];
-        toolbar.barTintColor = [UIColor blueColor];
-        toolbar;
-    });
-    [self.view addSubview:toolbar];
-    
-    if (iOS11) {
-        [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(48);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-        }];
-    }else{
-        [toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(48);
-            make.left.right.bottom.equalTo(self.view);
-        }];
-    }
     
 }
 

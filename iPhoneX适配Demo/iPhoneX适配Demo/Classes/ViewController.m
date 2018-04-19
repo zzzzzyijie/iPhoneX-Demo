@@ -58,7 +58,7 @@ UITableViewDataSource
 }
 
 - (void)setupData{
-    self.titleArray = @[@"scrollView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView"];
+    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView"];
     
 }
 
@@ -167,13 +167,13 @@ UITableViewDataSource
         }
         case 1:{
             fitViewController *vc = [[fitViewController alloc] init];
-            [vc setupToobarView];
+            [vc setupContentView];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 2:{
             fitViewController *vc = [[fitViewController alloc] init];
-            [vc setupContentView];
+            [vc setupTableView];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

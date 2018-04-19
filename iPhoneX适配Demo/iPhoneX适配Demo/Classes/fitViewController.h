@@ -14,11 +14,8 @@
 // Add some View
 - (void)addSomeView;
 
-// Add some View
+// Add scroll View
 - (void)setupScrollView;
-
-// Toobar
-- (void)setupToobarView;
 
 // ContentView
 - (void)setupContentView;

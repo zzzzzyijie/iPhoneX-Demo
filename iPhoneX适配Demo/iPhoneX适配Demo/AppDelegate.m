@@ -23,7 +23,7 @@
     1. iOS11以下 （6sp 6p）， 有navigationBar和Tabbar的布局会占据整个屏幕（self.view），
        希望不占据整个屏幕。
     2.跳转下一个页面的时候，布局会卡顿
- 
+    3.TableView在iPhone X的适配（底部）
  */
 
 
