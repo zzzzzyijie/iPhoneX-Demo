@@ -203,10 +203,13 @@ UITableViewDataSource
             make.edges.equalTo(self.view);
         }
     }];
-    
-//    if(iOS11){
-//        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
-//    }
+    /**
+    if(iOS11){
+        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    }else{
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+     */
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
