@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390C0536207CB13F00FA4F69 /* TSETFILE.m in Sources */ = {isa = PBXBuildFile; fileRef = 390C0535207CB13F00FA4F69 /* TSETFILE.m */; };
 		392B550E2081AFC4005CB86A /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B550D2081AFC4005CB86A /* NavViewController.m */; };
 		392B551C2085A21C005CB86A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551B2085A21C005CB86A /* ViewController2.m */; };
 		392B551F20873396005CB86A /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551E20873396005CB86A /* ViewController3.m */; };
@@ -46,8 +45,6 @@
 
 /* Begin PBXFileReference section */
 		112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhoneX适配Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		390C0534207CB13F00FA4F69 /* TSETFILE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSETFILE.h; sourceTree = "<group>"; };
-		390C0535207CB13F00FA4F69 /* TSETFILE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSETFILE.m; sourceTree = "<group>"; };
 		392B550C2081AFC4005CB86A /* NavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		392B550D2081AFC4005CB86A /* NavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
 		392B551A2085A21C005CB86A /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
@@ -155,8 +152,6 @@
 				392B551E20873396005CB86A /* ViewController3.m */,
 				39A55A9E1FEBB0BD0041337A /* fitViewController.h */,
 				39A55A9F1FEBB0BD0041337A /* fitViewController.m */,
-				390C0534207CB13F00FA4F69 /* TSETFILE.h */,
-				390C0535207CB13F00FA4F69 /* TSETFILE.m */,
 				392B550C2081AFC4005CB86A /* NavViewController.h */,
 				392B550D2081AFC4005CB86A /* NavViewController.m */,
 				392B552020883245005CB86A /* MyToolbar.h */,
@@ -442,7 +437,6 @@
 				392B552220883245005CB86A /* MyToolbar.m in Sources */,
 				392B550E2081AFC4005CB86A /* NavViewController.m in Sources */,
 				392B551F20873396005CB86A /* ViewController3.m in Sources */,
-				390C0536207CB13F00FA4F69 /* TSETFILE.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,17 +28,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
     UITabBarController *tabVc = [[UITabBarController alloc] init];
     self.tabVc = tabVc;
     NavViewController *nav = [[NavViewController alloc] initWithRootViewController:[ViewController new]];
-    NavViewController *nav2 = [[NavViewController alloc] initWithRootViewController:[ViewController2 new]];
-    NavViewController *nav3 = [[NavViewController alloc] initWithRootViewController:[ViewController3 new]];
     nav.title = @"TableView";
+    
+    NavViewController *nav2 = [[NavViewController alloc] initWithRootViewController:[ViewController2 new]];
     nav2.title = @"ContentView";
+    
+    NavViewController *nav3 = [[NavViewController alloc] initWithRootViewController:[ViewController3 new]];
     nav3.title = @"ScrollView";
+    
     tabVc.viewControllers = @[nav,nav3,nav2];
     [self.window setRootViewController:tabVc];
     [self.window makeKeyAndVisible];

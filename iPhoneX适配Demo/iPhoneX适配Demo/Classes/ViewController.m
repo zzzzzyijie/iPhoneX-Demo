@@ -21,7 +21,8 @@ UITableViewDataSource
 
 /** titleArray */
 @property (nonatomic,strong) NSArray *titleArray;
-
+/** contentTableView */
+@property (nonatomic,strong) UITableView *contentTableView;
 @end
 
 @implementation ViewController
@@ -82,6 +83,7 @@ UITableViewDataSource
      
      可见 self.view 在 viewDidLoad 和 viewDidLayoutSubviews 下都是占据整个屏幕
      */
+    //self.contentTableView.frame = self.view.bounds;
 }
 
 - (void)setupTableView{
@@ -98,6 +100,7 @@ UITableViewDataSource
         contentTableView.rowHeight = 70;
         contentTableView;
     });
+    self.contentTableView = contentTableView;
     [contentTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         if(iOS11){
             make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
