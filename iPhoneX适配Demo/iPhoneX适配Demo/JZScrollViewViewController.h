@@ -9,6 +9,9 @@
 #import "JZRootViewController.h"
 
 @interface JZScrollViewViewController : JZRootViewController
+<
+UIScrollViewDelegate
+>
 /** contentScrollView */
 @property (nonatomic,strong) UIScrollView *contentScrollView;
 @end

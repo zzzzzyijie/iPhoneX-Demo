@@ -25,6 +25,7 @@
     
     UIScrollView *scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] init];
+        scrollView.delegate = self;
         scrollView.backgroundColor = [UIColor whiteColor];
         scrollView.alwaysBounceVertical = YES;
         scrollView;
@@ -48,3 +49,6 @@
 }
 
 @end
+
+
+
