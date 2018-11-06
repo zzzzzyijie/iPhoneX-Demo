@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "NavViewController.h"
-#import "ViewController2.h"
-#import "ViewController3.h"
+#import "JZOtherConetentViewController.h"
+#import "JZOtherTableViewController.h"
+#import "JZOtherScrollViewViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -36,10 +37,10 @@
     NavViewController *nav = [[NavViewController alloc] initWithRootViewController:[ViewController new]];
     nav.title = @"TableView";
     
-    NavViewController *nav2 = [[NavViewController alloc] initWithRootViewController:[ViewController2 new]];
+    NavViewController *nav2 = [[NavViewController alloc] initWithRootViewController:[JZOtherConetentViewController new]];
     nav2.title = @"ContentView";
     
-    NavViewController *nav3 = [[NavViewController alloc] initWithRootViewController:[ViewController3 new]];
+    NavViewController *nav3 = [[NavViewController alloc] initWithRootViewController:[JZOtherScrollViewViewController new]];
     nav3.title = @"ScrollView";
     
     tabVc.viewControllers = @[nav,nav3,nav2];

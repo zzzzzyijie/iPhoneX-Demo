@@ -10,6 +10,9 @@
 #import <Masonry.h>
 #import "fitViewController.h"
 #import <JZScaleButton.h>
+#import "JZOtherConetentViewController.h"
+#import "JZOtherScrollViewViewController.h"
+#import "JZOtherTableViewController.h"
 
 #define iOS11 @available(iOS 11.0, *)
 
@@ -31,7 +34,7 @@ UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor clearColor];
-    self.navigationItem.title = @"TableView";
+    self.navigationItem.title = @"iPhoneX-适配";
     
     NSLog(@"viewDidLoad - self.view.info = %@",self.view);
     /*
@@ -59,7 +62,7 @@ UITableViewDataSource
 }
 
 - (void)setupData{
-    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView",@"ToolBar",@"ContentView",@"TableView"];
+    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"ToolBar"];
     
 }
 
@@ -93,7 +96,7 @@ UITableViewDataSource
         contentTableView.showsVerticalScrollIndicator = NO;
         contentTableView.showsHorizontalScrollIndicator = NO;
         contentTableView.alwaysBounceVertical = YES;
-        contentTableView.backgroundColor = [UIColor orangeColor];
+        contentTableView.backgroundColor = [UIColor whiteColor];
         contentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         contentTableView.delegate = self;
         contentTableView.dataSource = self;
@@ -136,20 +139,17 @@ UITableViewDataSource
     NSInteger row = indexPath.row;
     switch (row) {
         case 0:{
-            fitViewController *vc = [[fitViewController alloc] init];
-            [vc setupScrollView];
+            JZOtherScrollViewViewController *vc = [[JZOtherScrollViewViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 1:{
-            fitViewController *vc = [[fitViewController alloc] init];
-            [vc setupContentView];
+            JZOtherConetentViewController *vc = [[JZOtherConetentViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 2:{
-            fitViewController *vc = [[fitViewController alloc] init];
-            [vc setupTableView];
+            JZOtherTableViewController *vc = [[JZOtherTableViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

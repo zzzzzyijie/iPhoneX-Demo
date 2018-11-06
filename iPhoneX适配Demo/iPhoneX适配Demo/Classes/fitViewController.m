@@ -8,7 +8,7 @@
 
 #import "fitViewController.h"
 // View
-#import "MyToolbar.h"
+
 // Controller
 
 #import "AppDelegate.h"
@@ -129,7 +129,7 @@ UITableViewDataSource
         make.top.equalTo(scrollView.mas_top).offset(10);
     }];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    //self.automaticallyAdjustsScrollViewInsets = NO;
     
 }
 

@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390CC13E21914981008EEB04 /* JZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC13D21914981008EEB04 /* JZRootViewController.m */; };
+		390CC1412191499C008EEB04 /* JZContentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC1402191499C008EEB04 /* JZContentViewViewController.m */; };
+		390CC144219149AA008EEB04 /* JZTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC143219149AA008EEB04 /* JZTableViewViewController.m */; };
+		390CC147219149BD008EEB04 /* JZScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC146219149BD008EEB04 /* JZScrollViewViewController.m */; };
+		390CC14A21916E62008EEB04 /* JZOtherConetentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */; };
+		390CC14D21917912008EEB04 /* JZOtherScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14C21917912008EEB04 /* JZOtherScrollViewViewController.m */; };
+		390CC150219183DA008EEB04 /* JZOtherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */; };
 		392B550E2081AFC4005CB86A /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B550D2081AFC4005CB86A /* NavViewController.m */; };
-		392B551C2085A21C005CB86A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551B2085A21C005CB86A /* ViewController2.m */; };
-		392B551F20873396005CB86A /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B551E20873396005CB86A /* ViewController3.m */; };
-		392B552220883245005CB86A /* MyToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B552120883245005CB86A /* MyToolbar.m */; };
 		39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A55A9F1FEBB0BD0041337A /* fitViewController.m */; };
 		39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3A71FEA45CB002A7520 /* AppDelegate.m */; };
 		39EAD3AE1FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3AD1FEA45CB002A7520 /* tempfile.text */; };
@@ -45,14 +49,22 @@
 
 /* Begin PBXFileReference section */
 		112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhoneX适配Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		390CC13C21914981008EEB04 /* JZRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZRootViewController.h; sourceTree = "<group>"; };
+		390CC13D21914981008EEB04 /* JZRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZRootViewController.m; sourceTree = "<group>"; };
+		390CC13F2191499C008EEB04 /* JZContentViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZContentViewViewController.h; sourceTree = "<group>"; };
+		390CC1402191499C008EEB04 /* JZContentViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZContentViewViewController.m; sourceTree = "<group>"; };
+		390CC142219149AA008EEB04 /* JZTableViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZTableViewViewController.h; sourceTree = "<group>"; };
+		390CC143219149AA008EEB04 /* JZTableViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZTableViewViewController.m; sourceTree = "<group>"; };
+		390CC145219149BD008EEB04 /* JZScrollViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZScrollViewViewController.h; sourceTree = "<group>"; };
+		390CC146219149BD008EEB04 /* JZScrollViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZScrollViewViewController.m; sourceTree = "<group>"; };
+		390CC14821916E62008EEB04 /* JZOtherConetentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherConetentViewController.h; sourceTree = "<group>"; };
+		390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZOtherConetentViewController.m; sourceTree = "<group>"; };
+		390CC14B21917912008EEB04 /* JZOtherScrollViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherScrollViewViewController.h; sourceTree = "<group>"; };
+		390CC14C21917912008EEB04 /* JZOtherScrollViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZOtherScrollViewViewController.m; sourceTree = "<group>"; };
+		390CC14E219183DA008EEB04 /* JZOtherTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherTableViewController.h; sourceTree = "<group>"; };
+		390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZOtherTableViewController.m; sourceTree = "<group>"; };
 		392B550C2081AFC4005CB86A /* NavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		392B550D2081AFC4005CB86A /* NavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
-		392B551A2085A21C005CB86A /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
-		392B551B2085A21C005CB86A /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
-		392B551D20873396005CB86A /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController3.h; path = Classes/ViewController3.h; sourceTree = "<group>"; };
-		392B551E20873396005CB86A /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController3.m; path = Classes/ViewController3.m; sourceTree = "<group>"; };
-		392B552020883245005CB86A /* MyToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyToolbar.h; path = Classes/MyToolbar.h; sourceTree = "<group>"; };
-		392B552120883245005CB86A /* MyToolbar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyToolbar.m; path = Classes/MyToolbar.m; sourceTree = "<group>"; };
 		39A55A9E1FEBB0BD0041337A /* fitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fitViewController.h; path = Classes/fitViewController.h; sourceTree = "<group>"; };
 		39A55A9F1FEBB0BD0041337A /* fitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = fitViewController.m; path = Classes/fitViewController.m; sourceTree = "<group>"; };
 		39EAD3A31FEA45CB002A7520 /* iPhoneX适配Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhoneX适配Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +116,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390CC13B21914918008EEB04 /* RootVc */ = {
+			isa = PBXGroup;
+			children = (
+				390CC13C21914981008EEB04 /* JZRootViewController.h */,
+				390CC13D21914981008EEB04 /* JZRootViewController.m */,
+				390CC13F2191499C008EEB04 /* JZContentViewViewController.h */,
+				390CC1402191499C008EEB04 /* JZContentViewViewController.m */,
+				390CC142219149AA008EEB04 /* JZTableViewViewController.h */,
+				390CC143219149AA008EEB04 /* JZTableViewViewController.m */,
+				390CC145219149BD008EEB04 /* JZScrollViewViewController.h */,
+				390CC146219149BD008EEB04 /* JZScrollViewViewController.m */,
+			);
+			name = RootVc;
+			sourceTree = "<group>";
+		};
 		39EAD39A1FEA45CB002A7520 = {
 			isa = PBXGroup;
 			children = (
@@ -144,18 +171,19 @@
 		39EAD3A91FEA45CB002A7520 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				390CC13B21914918008EEB04 /* RootVc */,
 				39EAD3EA1FEA462D002A7520 /* ViewController.h */,
 				39EAD3EB1FEA462D002A7520 /* ViewController.m */,
-				392B551A2085A21C005CB86A /* ViewController2.h */,
-				392B551B2085A21C005CB86A /* ViewController2.m */,
-				392B551D20873396005CB86A /* ViewController3.h */,
-				392B551E20873396005CB86A /* ViewController3.m */,
 				39A55A9E1FEBB0BD0041337A /* fitViewController.h */,
 				39A55A9F1FEBB0BD0041337A /* fitViewController.m */,
 				392B550C2081AFC4005CB86A /* NavViewController.h */,
 				392B550D2081AFC4005CB86A /* NavViewController.m */,
-				392B552020883245005CB86A /* MyToolbar.h */,
-				392B552120883245005CB86A /* MyToolbar.m */,
+				390CC14821916E62008EEB04 /* JZOtherConetentViewController.h */,
+				390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */,
+				390CC14B21917912008EEB04 /* JZOtherScrollViewViewController.h */,
+				390CC14C21917912008EEB04 /* JZOtherScrollViewViewController.m */,
+				390CC14E219183DA008EEB04 /* JZOtherTableViewController.h */,
+				390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -429,14 +457,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392B551C2085A21C005CB86A /* ViewController2.m in Sources */,
+				390CC14A21916E62008EEB04 /* JZOtherConetentViewController.m in Sources */,
+				390CC14D21917912008EEB04 /* JZOtherScrollViewViewController.m in Sources */,
+				390CC147219149BD008EEB04 /* JZScrollViewViewController.m in Sources */,
+				390CC1412191499C008EEB04 /* JZContentViewViewController.m in Sources */,
 				39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */,
 				39EAD3E81FEA4618002A7520 /* main.m in Sources */,
 				39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */,
 				39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */,
-				392B552220883245005CB86A /* MyToolbar.m in Sources */,
 				392B550E2081AFC4005CB86A /* NavViewController.m in Sources */,
-				392B551F20873396005CB86A /* ViewController3.m in Sources */,
+				390CC150219183DA008EEB04 /* JZOtherTableViewController.m in Sources */,
+				390CC144219149AA008EEB04 /* JZTableViewViewController.m in Sources */,
+				390CC13E21914981008EEB04 /* JZRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
