@@ -17,15 +17,10 @@
 		392B550E2081AFC4005CB86A /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 392B550D2081AFC4005CB86A /* NavViewController.m */; };
 		39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A55A9F1FEBB0BD0041337A /* fitViewController.m */; };
 		39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3A71FEA45CB002A7520 /* AppDelegate.m */; };
-		39EAD3AE1FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3AD1FEA45CB002A7520 /* tempfile.text */; };
-		39EAD3B11FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3B01FEA45CB002A7520 /* tempfile.text */; };
-		39EAD3B41FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3B31FEA45CB002A7520 /* tempfile.text */; };
-		39EAD3B71FEA45CB002A7520 /* tempfile.text in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3B61FEA45CB002A7520 /* tempfile.text */; };
 		39EAD3CC1FEA45CB002A7520 /* iPhoneX__DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3CB1FEA45CB002A7520 /* iPhoneX__DemoTests.m */; };
 		39EAD3D71FEA45CB002A7520 /* iPhoneX__DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3D61FEA45CB002A7520 /* iPhoneX__DemoUITests.m */; };
 		39EAD3E71FEA4618002A7520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3E41FEA4618002A7520 /* Assets.xcassets */; };
 		39EAD3E81FEA4618002A7520 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3E51FEA4618002A7520 /* main.m */; };
-		39EAD3E91FEA4618002A7520 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39EAD3E61FEA4618002A7520 /* Info.plist */; };
 		39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EAD3EB1FEA462D002A7520 /* ViewController.m */; };
 		9736A024154324D0962F018A /* libPods-iPhoneX适配Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */; };
 /* End PBXBuildFile section */
@@ -269,8 +264,6 @@
 				39EAD39F1FEA45CB002A7520 /* Sources */,
 				39EAD3A01FEA45CB002A7520 /* Frameworks */,
 				39EAD3A11FEA45CB002A7520 /* Resources */,
-				073DAC61C105859079E04B3B /* [CP] Embed Pods Frameworks */,
-				EA9EEBFDE5A884D5D125AB3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,7 +316,7 @@
 		39EAD39B1FEA45CB002A7520 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = www.baibu.la;
 				TargetAttributes = {
 					39EAD3A21FEA45CB002A7520 = {
@@ -331,7 +324,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.SafariKeychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -372,12 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39EAD3AE1FEA45CB002A7520 /* tempfile.text in Resources */,
-				39EAD3B71FEA45CB002A7520 /* tempfile.text in Resources */,
-				39EAD3E91FEA4618002A7520 /* Info.plist in Resources */,
-				39EAD3B41FEA45CB002A7520 /* tempfile.text in Resources */,
 				39EAD3E71FEA4618002A7520 /* Assets.xcassets in Resources */,
-				39EAD3B11FEA45CB002A7520 /* tempfile.text in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,40 +386,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		073DAC61C105859079E04B3B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhoneX适配Demo/Pods-iPhoneX适配Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA9EEBFDE5A884D5D125AB3E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iPhoneX适配Demo/Pods-iPhoneX适配Demo-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iPhoneX适配Demo/Pods-iPhoneX适配Demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FB960791CEA026D30DF5A9A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,6 +472,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -525,6 +480,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -573,6 +529,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -580,6 +537,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -613,7 +571,6 @@
 			baseConfigurationReference = 830AAFD86B634D4C92EB8D30 /* Pods-iPhoneX适配Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "iPhoneX适配Demo/iPhoneX适配Demo.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WWRCUEEBS;
@@ -632,7 +589,6 @@
 			baseConfigurationReference = 8476F073C5B961894432DF25 /* Pods-iPhoneX适配Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "iPhoneX适配Demo/iPhoneX适配Demo.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WWRCUEEBS;

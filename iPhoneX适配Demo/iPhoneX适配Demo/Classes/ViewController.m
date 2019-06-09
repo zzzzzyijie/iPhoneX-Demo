@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <Masonry.h>
 #import "fitViewController.h"
-#import <JZScaleButton.h>
+//#import <JZScaleButton.h>
 #import "JZOtherConetentViewController.h"
 #import "JZOtherScrollViewViewController.h"
 #import "JZOtherTableViewController.h"
