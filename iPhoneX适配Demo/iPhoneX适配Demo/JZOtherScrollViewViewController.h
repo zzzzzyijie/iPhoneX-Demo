@@ -6,8 +6,8 @@
 //  Copyright © 2018年 www.baibu.la. All rights reserved.
 //
 
-#import "JZScrollViewViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface JZOtherScrollViewViewController : JZScrollViewViewController
+@interface JZOtherScrollViewViewController : UIViewController
 
 @end

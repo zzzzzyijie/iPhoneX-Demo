@@ -6,8 +6,8 @@
 //  Copyright © 2018年 www.baibu.la. All rights reserved.
 //
 
-#import "JZContentViewViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface JZOtherConetentViewController : JZContentViewViewController
+@interface JZOtherConetentViewController : UIViewController
 
 @end

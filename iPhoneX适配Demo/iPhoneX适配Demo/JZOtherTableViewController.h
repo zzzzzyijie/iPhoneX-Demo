@@ -6,8 +6,8 @@
 //  Copyright © 2018年 www.baibu.la. All rights reserved.
 //
 
-#import "JZTableViewViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface JZOtherTableViewController : JZTableViewViewController
+@interface JZOtherTableViewController : UIViewController
 
 @end

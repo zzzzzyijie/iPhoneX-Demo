@@ -46,7 +46,7 @@ UITableViewDataSource
 #pragma mark - =========================== Inial Method ====================================
 - (void)setupInit{
     // 如果设置clearColor会渲染异常
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:250/255.0f green:250/255.0f blue:250/255.0f alpha:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -74,12 +74,11 @@ UITableViewDataSource
 }
 
 - (void)addSomeView{
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+//
+//    self.view.backgroundColor = [UIColor whiteColor];
     
     UIView *someView = [UIView new];
     someView.backgroundColor = [UIColor purpleColor];
-    //someView.frame = CGRectMake(0, 0,200,200);
     [self.view addSubview:someView];
     
     [someView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,11 +90,10 @@ UITableViewDataSource
 
 - (void)setupScrollView{
     
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     
     UIScrollView *scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] init];
-        //scrollView.contentSize = CGSizeMake(0, 1000);
         scrollView.backgroundColor = [UIColor darkGrayColor];
         scrollView.alwaysBounceVertical = YES;
         scrollView;
@@ -109,6 +107,7 @@ UITableViewDataSource
     });
     [scrollView addSubview:childView];
     
+    // layout
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
             make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
@@ -130,12 +129,11 @@ UITableViewDataSource
     }];
     
     //self.automaticallyAdjustsScrollViewInsets = NO;
-    
 }
 
 - (void)setupContentView{
     
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     
     // safeArea下的 contentView
     UIView *contentView = ({
@@ -176,7 +174,7 @@ UITableViewDataSource
 
 - (void)setupTableView{
     
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.tableView = tableView;
@@ -192,8 +190,8 @@ UITableViewDataSource
 //            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
 //            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
 //            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-
-            // 而使用纯代码这样却不会
+            
+            // 这样的话没问题
             NSLayoutConstraint *top = [tableView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
             NSLayoutConstraint *bottom = [tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
             NSLayoutConstraint *left = [tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
@@ -203,13 +201,58 @@ UITableViewDataSource
             make.edges.equalTo(self.view);
         }
     }];
+    
     /**
+    it does't 
     if(iOS11){
         tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
     }else{
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
      */
+}
+
+// SomeView + TableView
+- (void)setupSomeViewAndTableView {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIView *childView = ({
+        UIView *childView = [[UIView alloc] init];
+        childView.backgroundColor = [UIColor grayColor];
+        childView;
+    });
+    [self.view addSubview:childView];
+    [childView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(130.f);
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        }else{
+            make.top.equalTo(self.mas_topLayoutGuideBottom);
+            make.left.equalTo(self.view).offset(10);
+            make.right.equalTo(self.view).offset(-10);
+        }
+    }];
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView = tableView;
+    tableView.backgroundColor = [UIColor whiteColor];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.rowHeight = 70;
+    [self.view addSubview:tableView];
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view).offset(0);
+        make.top.equalTo(childView.mas_bottom).offset(0);
+        if (iOS11) {
+            NSLayoutConstraint *bottom = [tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
+            [NSLayoutConstraint activateConstraints:@[bottom]];
+        }else {
+            make.bottom.equalTo(self.view);
+        }
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -223,6 +266,7 @@ UITableViewDataSource
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"cell - %ld",indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"cell - %ldcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcellcell",indexPath.row];
     return cell;
 }
 

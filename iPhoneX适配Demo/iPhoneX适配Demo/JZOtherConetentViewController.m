@@ -7,6 +7,7 @@
 //
 
 #import "JZOtherConetentViewController.h"
+#import <Masonry.h>
 
 @interface JZOtherConetentViewController ()
 
@@ -26,24 +27,54 @@
 
 - (void)setupInit{
     self.navigationItem.title = @"OtherConetentView";
-    self.view.backgroundColor = [UIColor whiteColor];
-    //self.contentView.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = UIColor.whiteColor;
 }
 
 - (void)setupContentUI{
+    
+    // safeArea下的 contentView
+    UIView *contentView = [UIView new];
+    contentView.backgroundColor = self.view.backgroundColor;
+    [self.view addSubview:contentView];
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        }else{
+            make.top.equalTo(self.mas_topLayoutGuideBottom);
+            make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
+            make.leading.trailing.equalTo(self.view);
+        }
+    }];
+    
     
     UIView *childView = ({
         UIView *childView = [[UIView alloc] init];
         childView.backgroundColor = [UIColor orangeColor];
         childView;
     });
-    [self.contentView addSubview:childView];
-
+    [contentView addSubview:childView];
+    
     [childView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(100);
-        make.left.equalTo(self.contentView).offset(5);
+        make.left.equalTo(contentView).offset(5);
+        make.top.equalTo(contentView).offset(5);
        // make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
-        make.top.equalTo(self.contentView.mas_top).offset(5);
+    }];
+    
+    
+    UIView *childView2 = ({
+        UIView *childView = [[UIView alloc] init];
+        childView.backgroundColor = [UIColor orangeColor];
+        childView.frame = CGRectMake(0, 951, UIScreen.mainScreen.bounds.size.width, 49);
+        childView;
+    });
+    [contentView addSubview:childView2];
+    [childView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(49);
+        make.bottom.leading.trailing.equalTo(contentView).offset(0);
     }];
 }
 

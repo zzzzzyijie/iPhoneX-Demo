@@ -62,7 +62,7 @@ UITableViewDataSource
 }
 
 - (void)setupData{
-    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"ToolBar"];
+    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"SomeView + TableView",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@"Bottom"];
     
 }
 
@@ -73,20 +73,7 @@ UITableViewDataSource
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    NSLog(@"viewDidLayoutSubviews - self.view.info = %@",self.view);
-    /*
-     iOS 11 以上
-         iPhoneX
-            frame = (0 0; 375 812);
-         iPhone8
-            frame = (0 0; 375 667);
-     iOS 11 以下
-        iPhone7
-        frame = (0 0; 375 667);
-     
-     可见 self.view 在 viewDidLoad 和 viewDidLayoutSubviews 下都是占据整个屏幕
-     */
-    //self.contentTableView.frame = self.view.bounds;
+//    NSLog(@"viewDidLayoutSubviews - self.view.info = %@",self.view);
 }
 
 - (void)setupTableView{
@@ -155,7 +142,7 @@ UITableViewDataSource
         }
         case 3:{
             fitViewController *vc = [[fitViewController alloc] init];
-            [vc setupTableView];
+            [vc setupSomeViewAndTableView];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

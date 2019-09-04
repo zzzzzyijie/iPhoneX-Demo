@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390CC13E21914981008EEB04 /* JZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC13D21914981008EEB04 /* JZRootViewController.m */; };
-		390CC1412191499C008EEB04 /* JZContentViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC1402191499C008EEB04 /* JZContentViewViewController.m */; };
-		390CC144219149AA008EEB04 /* JZTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC143219149AA008EEB04 /* JZTableViewViewController.m */; };
-		390CC147219149BD008EEB04 /* JZScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC146219149BD008EEB04 /* JZScrollViewViewController.m */; };
 		390CC14A21916E62008EEB04 /* JZOtherConetentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */; };
 		390CC14D21917912008EEB04 /* JZOtherScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14C21917912008EEB04 /* JZOtherScrollViewViewController.m */; };
 		390CC150219183DA008EEB04 /* JZOtherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */; };
@@ -44,14 +40,6 @@
 
 /* Begin PBXFileReference section */
 		112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhoneX适配Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		390CC13C21914981008EEB04 /* JZRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZRootViewController.h; sourceTree = "<group>"; };
-		390CC13D21914981008EEB04 /* JZRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZRootViewController.m; sourceTree = "<group>"; };
-		390CC13F2191499C008EEB04 /* JZContentViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZContentViewViewController.h; sourceTree = "<group>"; };
-		390CC1402191499C008EEB04 /* JZContentViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZContentViewViewController.m; sourceTree = "<group>"; };
-		390CC142219149AA008EEB04 /* JZTableViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZTableViewViewController.h; sourceTree = "<group>"; };
-		390CC143219149AA008EEB04 /* JZTableViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZTableViewViewController.m; sourceTree = "<group>"; };
-		390CC145219149BD008EEB04 /* JZScrollViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZScrollViewViewController.h; sourceTree = "<group>"; };
-		390CC146219149BD008EEB04 /* JZScrollViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZScrollViewViewController.m; sourceTree = "<group>"; };
 		390CC14821916E62008EEB04 /* JZOtherConetentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherConetentViewController.h; sourceTree = "<group>"; };
 		390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZOtherConetentViewController.m; sourceTree = "<group>"; };
 		390CC14B21917912008EEB04 /* JZOtherScrollViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherScrollViewViewController.h; sourceTree = "<group>"; };
@@ -65,9 +53,6 @@
 		39EAD3A31FEA45CB002A7520 /* iPhoneX适配Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPhoneX适配Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39EAD3A61FEA45CB002A7520 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39EAD3A71FEA45CB002A7520 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		39EAD3AD1FEA45CB002A7520 /* tempfile.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = tempfile.text; path = AppHelper/tempfile.text; sourceTree = "<group>"; };
-		39EAD3B01FEA45CB002A7520 /* tempfile.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = tempfile.text; path = ThirdPart/tempfile.text; sourceTree = "<group>"; };
-		39EAD3B31FEA45CB002A7520 /* tempfile.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = tempfile.text; path = Network/tempfile.text; sourceTree = "<group>"; };
 		39EAD3B61FEA45CB002A7520 /* tempfile.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = tempfile.text; path = Resoures/tempfile.text; sourceTree = "<group>"; };
 		39EAD3C71FEA45CB002A7520 /* iPhoneX适配DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iPhoneX适配DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39EAD3CB1FEA45CB002A7520 /* iPhoneX__DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPhoneX__DemoTests.m; sourceTree = "<group>"; };
@@ -111,21 +96,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		390CC13B21914918008EEB04 /* RootVc */ = {
-			isa = PBXGroup;
-			children = (
-				390CC13C21914981008EEB04 /* JZRootViewController.h */,
-				390CC13D21914981008EEB04 /* JZRootViewController.m */,
-				390CC13F2191499C008EEB04 /* JZContentViewViewController.h */,
-				390CC1402191499C008EEB04 /* JZContentViewViewController.m */,
-				390CC142219149AA008EEB04 /* JZTableViewViewController.h */,
-				390CC143219149AA008EEB04 /* JZTableViewViewController.m */,
-				390CC145219149BD008EEB04 /* JZScrollViewViewController.h */,
-				390CC146219149BD008EEB04 /* JZScrollViewViewController.m */,
-			);
-			name = RootVc;
-			sourceTree = "<group>";
-		};
 		39EAD39A1FEA45CB002A7520 = {
 			isa = PBXGroup;
 			children = (
@@ -155,9 +125,6 @@
 				39EAD3A61FEA45CB002A7520 /* AppDelegate.h */,
 				39EAD3A71FEA45CB002A7520 /* AppDelegate.m */,
 				39EAD3A91FEA45CB002A7520 /* Classes */,
-				39EAD3AC1FEA45CB002A7520 /* AppHelper */,
-				39EAD3AF1FEA45CB002A7520 /* ThirdPart */,
-				39EAD3B21FEA45CB002A7520 /* Network */,
 				39EAD3B51FEA45CB002A7520 /* Resoures */,
 			);
 			path = "iPhoneX适配Demo";
@@ -166,7 +133,6 @@
 		39EAD3A91FEA45CB002A7520 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				390CC13B21914918008EEB04 /* RootVc */,
 				39EAD3EA1FEA462D002A7520 /* ViewController.h */,
 				39EAD3EB1FEA462D002A7520 /* ViewController.m */,
 				39A55A9E1FEBB0BD0041337A /* fitViewController.h */,
@@ -181,30 +147,6 @@
 				390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		39EAD3AC1FEA45CB002A7520 /* AppHelper */ = {
-			isa = PBXGroup;
-			children = (
-				39EAD3AD1FEA45CB002A7520 /* tempfile.text */,
-			);
-			name = AppHelper;
-			sourceTree = "<group>";
-		};
-		39EAD3AF1FEA45CB002A7520 /* ThirdPart */ = {
-			isa = PBXGroup;
-			children = (
-				39EAD3B01FEA45CB002A7520 /* tempfile.text */,
-			);
-			name = ThirdPart;
-			sourceTree = "<group>";
-		};
-		39EAD3B21FEA45CB002A7520 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				39EAD3B31FEA45CB002A7520 /* tempfile.text */,
-			);
-			name = Network;
 			sourceTree = "<group>";
 		};
 		39EAD3B51FEA45CB002A7520 /* Resoures */ = {
@@ -413,16 +355,12 @@
 			files = (
 				390CC14A21916E62008EEB04 /* JZOtherConetentViewController.m in Sources */,
 				390CC14D21917912008EEB04 /* JZOtherScrollViewViewController.m in Sources */,
-				390CC147219149BD008EEB04 /* JZScrollViewViewController.m in Sources */,
-				390CC1412191499C008EEB04 /* JZContentViewViewController.m in Sources */,
 				39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */,
 				39EAD3E81FEA4618002A7520 /* main.m in Sources */,
 				39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */,
 				39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */,
 				392B550E2081AFC4005CB86A /* NavViewController.m in Sources */,
 				390CC150219183DA008EEB04 /* JZOtherTableViewController.m in Sources */,
-				390CC144219149AA008EEB04 /* JZTableViewViewController.m in Sources */,
-				390CC13E21914981008EEB04 /* JZRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

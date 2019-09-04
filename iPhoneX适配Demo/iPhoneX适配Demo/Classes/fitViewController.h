@@ -23,4 +23,7 @@
 // TableView
 - (void)setupTableView;
 
+// SomeView + TableView
+- (void)setupSomeViewAndTableView;
+
 @end
