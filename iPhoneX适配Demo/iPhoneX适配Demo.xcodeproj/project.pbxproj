@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A953D63231FA82B007D2E9B /* LayoutMarginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A953D62231FA82B007D2E9B /* LayoutMarginViewController.m */; };
 		390CC14A21916E62008EEB04 /* JZOtherConetentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */; };
 		390CC14D21917912008EEB04 /* JZOtherScrollViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14C21917912008EEB04 /* JZOtherScrollViewViewController.m */; };
 		390CC150219183DA008EEB04 /* JZOtherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		112F8D087D62015C9A1C7940 /* libPods-iPhoneX适配Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPhoneX适配Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A953D61231FA82B007D2E9B /* LayoutMarginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutMarginViewController.h; sourceTree = "<group>"; };
+		1A953D62231FA82B007D2E9B /* LayoutMarginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayoutMarginViewController.m; sourceTree = "<group>"; };
 		390CC14821916E62008EEB04 /* JZOtherConetentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherConetentViewController.h; sourceTree = "<group>"; };
 		390CC14921916E62008EEB04 /* JZOtherConetentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZOtherConetentViewController.m; sourceTree = "<group>"; };
 		390CC14B21917912008EEB04 /* JZOtherScrollViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZOtherScrollViewViewController.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				390CC14C21917912008EEB04 /* JZOtherScrollViewViewController.m */,
 				390CC14E219183DA008EEB04 /* JZOtherTableViewController.h */,
 				390CC14F219183DA008EEB04 /* JZOtherTableViewController.m */,
+				1A953D61231FA82B007D2E9B /* LayoutMarginViewController.h */,
+				1A953D62231FA82B007D2E9B /* LayoutMarginViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				390CC14A21916E62008EEB04 /* JZOtherConetentViewController.m in Sources */,
 				390CC14D21917912008EEB04 /* JZOtherScrollViewViewController.m in Sources */,
 				39A55AA01FEBB0BD0041337A /* fitViewController.m in Sources */,
+				1A953D63231FA82B007D2E9B /* LayoutMarginViewController.m in Sources */,
 				39EAD3E81FEA4618002A7520 /* main.m in Sources */,
 				39EAD3EC1FEA462D002A7520 /* ViewController.m in Sources */,
 				39EAD3A81FEA45CB002A7520 /* AppDelegate.m in Sources */,

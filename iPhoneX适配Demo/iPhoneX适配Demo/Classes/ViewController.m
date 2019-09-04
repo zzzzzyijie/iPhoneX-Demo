@@ -13,6 +13,7 @@
 #import "JZOtherConetentViewController.h"
 #import "JZOtherScrollViewViewController.h"
 #import "JZOtherTableViewController.h"
+#import "LayoutMarginViewController.h"
 
 #define iOS11 @available(iOS 11.0, *)
 
@@ -62,7 +63,7 @@ UITableViewDataSource
 }
 
 - (void)setupData{
-    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"SomeView + TableView",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@"Bottom"];
+    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"SomeView + TableView",@"Layout‘s Margin",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@"Bottom"];
     
 }
 
@@ -145,6 +146,10 @@ UITableViewDataSource
             [vc setupSomeViewAndTableView];
             [self.navigationController pushViewController:vc animated:YES];
             break;
+        }
+        case 4: {
+            LayoutMarginViewController *vc = [[LayoutMarginViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }
