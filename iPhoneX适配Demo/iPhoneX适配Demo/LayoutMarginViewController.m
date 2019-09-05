@@ -35,17 +35,17 @@
 //    self.view.safeAreaLayoutGuide.topAnchor
     
     if (@available(iOS 11.0, *)) {
-//        NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
-//        NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor];
-//        NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor];
-//        NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor];
-//        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-        [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-        }];
+        NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
+        NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor];
+        NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor];
+        NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor];
+        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
+//        [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+//            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+//            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+//            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+//        }];
     } else {
         // Fallback on earlier versions
         [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -62,18 +62,18 @@
     });
 
     if (@available(iOS 11.0, *)) {
-//        NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.topAnchor constant:-10];
-//        NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.bottomAnchor constant:10];
-//        NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.leftAnchor constant:-10];
-//        NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.rightAnchor constant:10];
-//        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
+        NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.topAnchor constant:-10];
+        NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.bottomAnchor constant:10];
+        NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.leftAnchor constant:-10];
+        NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.rightAnchor constant:10];
+        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
         
-        [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-        }];
+//        [twoView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+//            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+//            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+//            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+//        }];
     } else {
         // Fallback on earlier versions
         [oneView mas_makeConstraints:^(MASConstraintMaker *make) {

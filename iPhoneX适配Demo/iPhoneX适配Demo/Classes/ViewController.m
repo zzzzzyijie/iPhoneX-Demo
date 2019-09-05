@@ -63,7 +63,7 @@ UITableViewDataSource
 }
 
 - (void)setupData{
-    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"SomeView + TableView",@"Layout‘s Margin",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@"Bottom"];
+    self.titleArray = @[@"scrollView",@"ContentView",@"TableView",@"CollectionView",@"SomeView + TableView",@"Layout‘s Margin",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@" ",@"Bottom"];
     
 }
 
@@ -143,11 +143,17 @@ UITableViewDataSource
         }
         case 3:{
             fitViewController *vc = [[fitViewController alloc] init];
+            [vc setupCollectionView];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 4:{
+            fitViewController *vc = [[fitViewController alloc] init];
             [vc setupSomeViewAndTableView];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-        case 4: {
+        case 5: {
             LayoutMarginViewController *vc = [[LayoutMarginViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }

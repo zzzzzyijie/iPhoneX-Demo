@@ -23,6 +23,9 @@
 // TableView
 - (void)setupTableView;
 
+// CollectionView
+- (void)setupCollectionView;
+
 // SomeView + TableView
 - (void)setupSomeViewAndTableView;
 
