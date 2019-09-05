@@ -2,9 +2,13 @@
 
 
 [iPhoneX 适配实践](https://cloud.tencent.com/community/article/322940)
+
 [为 iPhone X 更新您的 app（官方）](https://developer.apple.com/cn/ios/update-apps-for-iphone-x/)
+
 [architecture架构与对应的机型](https://www.innerfence.com/howto/apple-ios-devices-dates-versions-instruction-sets)
+
 [iPhone手机尺寸对比](http://iosres.com/)
+
 [关于UILayoutGuide、SafeAreaLayoutGuide](https://peteruncle.com/2018/01/28/NSLayoutAnchor%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#UILayoutGuide)
 
 ----------- 
@@ -52,24 +56,23 @@ tabBar: 83pt ( 49px + 34pt )
 - 在iPhone X中ContentView的布局
 
 ```objc
-    // safeArea下的 contentView
-    UIView *contentView = [UIView new];
-    contentView.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:contentView];
-    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-        }else{
-            make.top.equalTo(self.mas_topLayoutGuideBottom);
-            make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
-            make.left.equalTo(self.view);
-            make.right.equalTo(self.view);
-        }
-    }];
-
+// safeArea下的 contentView
+UIView *contentView = [UIView new];
+contentView.backgroundColor = [UIColor yellowColor];
+[self.view addSubview:contentView];
+[contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    if (@available(iOS 11.0, *)) {
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+        make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+    }else{
+        make.top.equalTo(self.mas_topLayoutGuideBottom);
+        make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+    }
+}];
 ```
 ![](https://raw.githubusercontent.com/zzzzzyijie/MyImageStore/master/blog/20190905220728.png)
 
@@ -77,35 +80,34 @@ tabBar: 83pt ( 49px + 34pt )
 
 
 ### UIScrollView
-```
-
-        UIScrollView *scrollView = ({
-            UIScrollView *scrollView = [[UIScrollView alloc] init];
-            //scrollView.contentSize = CGSizeMake(0, 1000);
-            scrollView.backgroundColor = SupplierAppBGColor;
-            scrollView.alwaysBounceVertical = YES;
-            scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-            scrollView;
-        });
-        _scrollView = scrollView;
-        [self.view addSubview:scrollView];
-        
-        [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-            if (@available(iOS 11.0, *)) {
-            NSLayoutConstraint *top = [scrollView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
-            NSLayoutConstraint *bottom = [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
-            NSLayoutConstraint *left = [tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-            NSLayoutConstraint *right = [tableView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-            [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-            }else{
-                make.left.equalTo(self.view);
-                make.right.equalTo(self.view);
-                make.top.equalTo(self.mas_topLayoutGuideBottom);
-                make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
-            }
-        }];
-        
-        注意点：当使用自动布局来设置ScrollView需要注意约束冲突，建议嵌套一个ContentView来布局。
+```objc
+UIScrollView *scrollView = ({
+UIScrollView *scrollView = [[UIScrollView alloc] init];
+//scrollView.contentSize = CGSizeMake(0, 1000);
+scrollView.backgroundColor = SupplierAppBGColor;
+scrollView.alwaysBounceVertical = YES;
+scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+scrollView;
+});
+_scrollView = scrollView;
+[self.view addSubview:scrollView];
+    
+[scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+if (@available(iOS 11.0, *)) {
+NSLayoutConstraint *top = [scrollView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
+NSLayoutConstraint *bottom = [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
+NSLayoutConstraint *left = [tableView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
+NSLayoutConstraint *right = [tableView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
+[NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
+}else{
+    make.left.equalTo(self.view);
+    make.right.equalTo(self.view);
+    make.top.equalTo(self.mas_topLayoutGuideBottom);
+    make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
+}
+}];
+    
+注意点：当使用自动布局来设置ScrollView需要注意约束冲突，建议嵌套一个ContentView来布局。
 ```
 
 ![](https://raw.githubusercontent.com/zzzzzyijie/MyImageStore/master/blog/20190905220939.png)
@@ -118,24 +120,23 @@ tabBar: 83pt ( 49px + 34pt )
 - 在iPhone X中TableView的布局
 
 ```objc
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    //tableView.backgroundColor = [UIColor orangeColor];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.rowHeight = 70;
-    [self.view addSubview:tableView];
-    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            NSLayoutConstraint *top = [tableView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
-            NSLayoutConstraint *bottom = [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
-            NSLayoutConstraint *left = [scrollView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
-            NSLayoutConstraint *right = [scrollView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
-            [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-        } else {
-            make.edges.equalTo(self.view);
-        }
-    }];
-
+UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+//tableView.backgroundColor = [UIColor orangeColor];
+tableView.delegate = self;
+tableView.dataSource = self;
+tableView.rowHeight = 70;
+[self.view addSubview:tableView];
+[tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    if (@available(iOS 11.0, *)) {
+        NSLayoutConstraint *top = [tableView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
+        NSLayoutConstraint *bottom = [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor];
+        NSLayoutConstraint *left = [scrollView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor];
+        NSLayoutConstraint *right = [scrollView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor];
+        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
+    } else {
+        make.edges.equalTo(self.view);
+    }
+}];
 ```
 ![](https://raw.githubusercontent.com/zzzzzyijie/MyImageStore/master/blog/20190905221543.png)
 ![](https://raw.githubusercontent.com/zzzzzyijie/MyImageStore/master/blog/20190905221613.png)
@@ -144,7 +145,7 @@ tabBar: 83pt ( 49px + 34pt )
 
 
 ### CollectionView 
-```
+```objc
 // 1.创建
 self.collectionView = ({
     // 靠左排列的布局Layout
@@ -231,37 +232,37 @@ self.collectionView = ({
 ### SomeView & TableView 
 
 ```objc
-    // topView
-    self.topView = ({
-        DDEvaluateSuccessTopView *view = [DDEvaluateSuccessTopView jz_viewFromXib];
-        [self.view addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(130.f);
-            if (@available(iOS 11.0, *)) {
-                make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
-                make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-                make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
-            }else{
-                make.top.equalTo(self.mas_topLayoutGuideBottom);
-                make.left.equalTo(self.view);
-                make.right.equalTo(self.view);
-            }
-        }];
-        view;
-    });
-
-    // tableView
-   [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
-        make.top.equalTo(self.topView.mas_bottom).offset(0);
+// topView
+self.topView = ({
+    DDEvaluateSuccessTopView *view = [DDEvaluateSuccessTopView jz_viewFromXib];
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(130.f);
         if (@available(iOS 11.0, *)) {
-            NSLayoutConstraint *bottom = [tableView.bottomAnchor constraintEqualToAnchor:weakSelf.view.bottomAnchor];
-            [NSLayoutConstraint activateConstraints:@[bottom]];
-        }else {
-            make.bottom.equalTo(self.view);
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        }else{
+            make.top.equalTo(self.mas_topLayoutGuideBottom);
+            make.left.equalTo(self.view);
+            make.right.equalTo(self.view);
         }
     }];
+    view;
+});
+
+// tableView
+[tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(self.view).offset(10);
+    make.right.equalTo(self.view).offset(-10);
+    make.top.equalTo(self.topView.mas_bottom).offset(0);
+    if (@available(iOS 11.0, *)) {
+        NSLayoutConstraint *bottom = [tableView.bottomAnchor constraintEqualToAnchor:weakSelf.view.bottomAnchor];
+        [NSLayoutConstraint activateConstraints:@[bottom]];
+    }else {
+        make.bottom.equalTo(self.view);
+    }
+}];
 ```
 
 ![](https://raw.githubusercontent.com/zzzzzyijie/MyImageStore/master/blog/20190905221713.png)
@@ -271,49 +272,49 @@ self.collectionView = ({
 
 ### safeAreaLayoutGuide
 ```objc
-    UIView *oneView = ({
-        UIView *view = [[UIView alloc] init];
-        view.backgroundColor = UIColor.yellowColor;
-        [self.view addSubview:view];
-        view.translatesAutoresizingMaskIntoConstraints = NO;
-        view;
-    });
+UIView *oneView = ({
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = UIColor.yellowColor;
+    [self.view addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    view;
+});
     
-    if (@available(iOS 11.0, *)) {
-        NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
-        NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor];
-        NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor];
-        NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor];
-        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-        
-    } else {
-        // Fallback on earlier versions
-        [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view);
-        }];
-    }
+if (@available(iOS 11.0, *)) {
+    NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
+    NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor];
+    NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leftAnchor];
+    NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.rightAnchor];
+    [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
     
-    UIView *twoView = ({
-        UIView *view = [[UIView alloc] init];
-        view.backgroundColor = UIColor.purpleColor;
-        [oneView addSubview:view];
-        view.translatesAutoresizingMaskIntoConstraints = NO;
-        view;
-    });
+} else {
+    // Fallback on earlier versions
+    [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
+    
+UIView *twoView = ({
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = UIColor.purpleColor;
+    [oneView addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    view;
+});
 
-    if (@available(iOS 11.0, *)) {
-        NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.topAnchor constant:-10];
-        NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.bottomAnchor constant:10];
-        NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.leftAnchor constant:-10];
-        NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.rightAnchor constant:10];
-        [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
-        
-    } else {
-        // Fallback on earlier versions
-        [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(oneView).insets(UIEdgeInsetsMake(10, 10, 10, 10));
-        }];
-    }
+if (@available(iOS 11.0, *)) {
+    NSLayoutConstraint *top = [oneView.topAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.topAnchor constant:-10];
+    NSLayoutConstraint *bottom = [oneView.bottomAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.bottomAnchor constant:10];
+    NSLayoutConstraint *left = [oneView.leftAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.leftAnchor constant:-10];
+    NSLayoutConstraint *right = [oneView.rightAnchor constraintEqualToAnchor:twoView.safeAreaLayoutGuide.rightAnchor constant:10];
+    [NSLayoutConstraint activateConstraints:@[top, bottom, left, right]];
+    
+} else {
+    // Fallback on earlier versions
+    [oneView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(oneView).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+    }];
+}
 
 ``` 
 
