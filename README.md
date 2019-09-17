@@ -1,4 +1,4 @@
-# 关于iPhoneX系列的适配
+# 关于iPhoneX系列适配的一些实践
 
 
 [iPhoneX 适配实践](https://cloud.tencent.com/community/article/322940)
@@ -18,7 +18,7 @@
 - iPhone X的SafeArea区域 如图
 ![Snip20171223_1](https://raw.githubusercontent.com/zzzzzyijie/MyImageStore/master/blog/20190905220308.png)
 
-- 理解SafeArea
+- 一些变化
 
 ```
 
@@ -44,7 +44,9 @@ tabBar: 83pt ( 49px + 34pt )
 
 2.如果使用Frame布局，最好在 viewDidLayoutSubView 和 layoutSubView里布局
 
-3.所以，通常把外层的contentView做好适配的布局，然后子控件根据父控件来布局、写约束，这样以后有什么改动的话，只需要适配好外层的contentView就可以了。
+3.适配的正确做法，对于ScrollView和TableView，当滚动到底部的时候，底部会有一个安全区域（不显示内容）；当没滚动到底部的时候，ScrollView和TableView的显示内容包括底部的安全区域。
+
+4.所以，通常把外层的contentView做好适配的布局，然后子控件根据父控件来布局、写约束，这样以后有什么改动的话，只需要适配好外层的contentView就可以了。
 
 （ 以下是一些常用的ContentView布局适配方案。
 
